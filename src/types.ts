@@ -1,5 +1,5 @@
 export type RootState = {
-  userReducer: {
+  user: {
     email: string | undefined,
     password: string | undefined
   }
