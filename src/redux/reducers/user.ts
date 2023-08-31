@@ -1,5 +1,3 @@
-// Esse reducer será responsável por tratar as informações da pessoa usuária
-
 import { AnyAction } from 'redux';
 import { UPDATE_USER_DETAILS } from '../actions';
 
@@ -17,5 +15,3 @@ export function userReducer(state = USER_INITIAL_STATE, action: AnyAction) {
       return state;
   }
 }
-
-// export default userReducer;
