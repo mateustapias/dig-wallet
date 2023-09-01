@@ -8,7 +8,7 @@ export type Expense = {
   method: string,
   tag: string,
   description: string,
-  exchangeRates: number,
+  exchangeRates: Currencies,
 };
 
 export type RootState = {
@@ -18,7 +18,8 @@ export type RootState = {
   },
   wallet: {
     currencies: string[],
-    expenses: Expense[]
+    expenses: Expense[],
+    exchangeRates: Currencies
   }
 };
 
@@ -29,16 +30,34 @@ export type User = {
   password: string,
 };
 
-export type Currency = {
+type Currency = {
   code: string,
   codein: string,
   name: string,
-  high: number,
-  low: number,
-  varBid: number,
-  pctChange: number,
-  bid: number,
-  ask: number,
-  timestamp: number,
-  create_date: string
+  high: string,
+  low: string,
+  varBid: string,
+  pctChange: string,
+  bid: string,
+  ask: string,
+  timestamp: string,
+  create_date: string,
+};
+
+export type Currencies = {
+  USD: Currency,
+  CAD: Currency,
+  GBP: Currency,
+  ARS: Currency,
+  BTC: Currency,
+  LTC: Currency,
+  EUR: Currency,
+  JPY: Currency,
+  CHF: Currency,
+  AUD: Currency,
+  CNY: Currency,
+  ILS: Currency,
+  ETH: Currency,
+  XRP: Currency,
+  DOGE: Currency,
 };
