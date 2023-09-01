@@ -18,7 +18,6 @@ function Header() {
             const { value, currency, exchangeRates } = cur;
             return (acc + (Number(value) * Number(exchangeRates[currency].ask)));
           }, 0).toFixed(2)}
-          0
         </span>
       </div>
       <div className="header-currency-container">
