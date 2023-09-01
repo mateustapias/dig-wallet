@@ -10,7 +10,10 @@ export function userReducer(state = USER_INITIAL_STATE, action: AnyAction) {
   const { type, payload } = action;
   switch (type) {
     case UPDATE_USER_DETAILS:
-      return payload;
+      return ({
+        ...state,
+        ...payload,
+      });
     default:
       return state;
   }
