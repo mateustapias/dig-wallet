@@ -16,16 +16,18 @@ function Header() {
         </span>
       </div>
       <div className="total-container">
-        <h2 data-testid="total-field">
+        <h2>
           Despesa total:
           {' '}
           R$
           {' '}
-          {expenses.reduce((acc, cur) => {
-            const { value, currency, exchangeRates } = cur;
-            const sum = (acc + (Number(value) * Number(exchangeRates[currency].ask)));
-            return sum;
-          }, 0).toFixed(2)}
+          <span data-testid="total-field">
+            {expenses.reduce((acc, cur) => {
+              const { value, currency, exchangeRates } = cur;
+              const sum = (acc + (Number(value) * Number(exchangeRates[currency].ask)));
+              return sum;
+            }, 0).toFixed(2)}
+          </span>
         </h2>
         <h3 data-testid="header-currency-field">
           BRL
