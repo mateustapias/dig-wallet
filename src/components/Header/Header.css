@@ -5,4 +5,19 @@
   display: flex;
   justify-content: space-between;
   min-height: 7vh;
+  padding: 0 20px;
+}
+
+.total-container {
+  align-items: center;
+  display: flex;
+}
+
+.total-container h2 {
+  font-weight: 500;
+  margin: 0 5px;
+}
+
+.total-container h3 {
+  font-weight: 400;
 }

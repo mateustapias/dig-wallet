@@ -3,7 +3,11 @@ import { RootState } from '../../types';
 import './Header.css';
 
 function Header() {
-  const { user: { email }, wallet: { expenses } } = useSelector((rootState: RootState) => rootState);
+  const { user:
+    { email },
+  wallet:
+    { expenses } } = useSelector((rootState: RootState) => rootState);
+
   return (
     <div className="header-container">
       <div className="email-container">
@@ -12,18 +16,20 @@ function Header() {
         </span>
       </div>
       <div className="total-container">
+        <h2 data-testid="total-field">
           Despesa total:
-        <span data-testid="total-field">
+          {' '}
+          R$
+          {' '}
           {expenses.reduce((acc, cur) => {
             const { value, currency, exchangeRates } = cur;
-            return (acc + (Number(value) * Number(exchangeRates[currency].ask)));
+            const sum = (acc + (Number(value) * Number(exchangeRates[currency].ask)));
+            return sum;
           }, 0).toFixed(2)}
-        </span>
-      </div>
-      <div className="header-currency-container">
-        <span data-testid="header-currency-field">
+        </h2>
+        <h3 data-testid="header-currency-field">
           BRL
-        </span>
+        </h3>
       </div>
     </div>
   );

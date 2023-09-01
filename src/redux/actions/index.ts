@@ -26,7 +26,7 @@ function actionGetCurrenciesFailed(error: string) {
   });
 }
 
-function actionGetCurrenciesSucceed(currencies: Currencies, firstTime = false) {
+function actionGetCurrenciesSucceed(currencies: Currencies) {
   return ({
     type: GET_CURRENCIES_SUCCEED,
     payload: {

@@ -18,14 +18,14 @@
   padding: 40px 60px;
 }
 
-form {
+.login-form-container form {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-input {
+.login-form-container input {
   border: 1px solid rgba(0, 0, 0, 0.801);
   border-radius: 3px;
   height: 30px;
@@ -33,7 +33,7 @@ input {
   width: 200px;
 }
 
-button {
+.login-form-container button {
   background-color: rgb(14, 14, 141);
   border: none;
   border-radius: 5px;

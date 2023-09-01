@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { Dispatch, Expense, RootState } from '../types';
-import { actionAddExpense, actionFetchCurrencies } from '../redux/actions';
+import { Dispatch, RootState } from '../../types';
+import { actionAddExpense, actionFetchCurrencies } from '../../redux/actions';
+import './WalletForm.css';
 
 type FormData = {
   id: number,
@@ -14,7 +15,9 @@ type FormData = {
 
 function WalletForm() {
   const dispatch: Dispatch = useDispatch();
-  const { wallet: { currencies, exchangeRates } } = useSelector((rootState: RootState) => rootState);
+  const { wallet: {
+    currencies, exchangeRates,
+  } } = useSelector((rootState: RootState) => rootState);
 
   const methods = [
     'Dinheiro',
@@ -85,6 +88,7 @@ function WalletForm() {
           Valor:
           <input
             data-testid="value-input"
+            className="value-input"
             name="value"
             value={ value }
             onChange={ handleChange }
@@ -94,6 +98,7 @@ function WalletForm() {
           Descrição:
           <input
             data-testid="description-input"
+            className="description-input"
             name="description"
             value={ description }
             onChange={ handleChange }
@@ -103,6 +108,7 @@ function WalletForm() {
           Moeda:
           <select
             data-testid="currency-input"
+            className="currency-input"
             name="currency"
             value={ currency }
             onChange={ handleChange }
@@ -114,6 +120,7 @@ function WalletForm() {
           Método de pagamento:
           <select
             data-testid="method-input"
+            className="method-input"
             name="method"
             value={ method }
             onChange={ handleChange }
@@ -125,6 +132,7 @@ function WalletForm() {
           Categoria:
           <select
             data-testid="tag-input"
+            className="tag-input"
             name="tag"
             value={ tag }
             onChange={ handleChange }
@@ -134,6 +142,7 @@ function WalletForm() {
         </label>
         <button
           type="submit"
+          className="wallet-form-submit-button"
         >
           Adicionar despesa
         </button>
