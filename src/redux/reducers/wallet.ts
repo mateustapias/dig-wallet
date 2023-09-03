@@ -1,12 +1,10 @@
 import { AnyAction } from 'redux';
-import { GET_CURRENCIES_SUCCEED, ADD_EXPENSE } from '../actions';
+import { GET_CURRENCIES_SUCCEED, ADD_EXPENSE, REMOVE_EXPENSE } from '../actions';
 
 export const WALLET_INITIAL_STATE = {
   currencies: [],
   expenses: [],
   exchangeRates: null,
-  // editor: false,
-  // idToEdit: 0,
 };
 
 export function walletReducer(state = WALLET_INITIAL_STATE, action: AnyAction) {
@@ -14,17 +12,20 @@ export function walletReducer(state = WALLET_INITIAL_STATE, action: AnyAction) {
   switch (type) {
     case GET_CURRENCIES_SUCCEED:
       return {
-        // ...state,
-        // currencies: payload.currencies,
         ...state,
-        exchangeRates: action.payload.currencies,
-        currencies: action.payload && Object.keys(action.payload.currencies)
+        exchangeRates: payload.currencies,
+        currencies: payload && Object.keys(payload.currencies)
           .filter((currency) => currency !== 'USDT'),
       };
     case ADD_EXPENSE:
       return {
         ...state,
         expenses: [...state.expenses, payload.expense],
+      };
+    case REMOVE_EXPENSE:
+      return {
+        ...state,
+        expenses: [...payload.expenses],
       };
     default:
       return state;

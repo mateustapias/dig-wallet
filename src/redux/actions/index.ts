@@ -7,6 +7,7 @@ export const GET_CURRENCIES_STARTED = 'GET_CURRENCIES_STARTED';
 export const GET_CURRENCIES_FAILED = 'GET_CURRENCIES_FAILED';
 export const GET_CURRENCIES_SUCCEED = 'GET_CURRENCIES_SUCCEED';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
 
 export const actionUpdateUserDetails = (user: User) => ({
   type: UPDATE_USER_DETAILS,
@@ -52,6 +53,15 @@ export function actionAddExpense(expense: Expense) {
     type: ADD_EXPENSE,
     payload: {
       expense,
+    },
+  };
+}
+
+export function actionRemoveExpense(expenses: Expense[]) {
+  return {
+    type: REMOVE_EXPENSE,
+    payload: {
+      expenses,
     },
   };
 }
