@@ -4,11 +4,11 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import mockData from './helpers/mockData';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
-import * as APIModule from '../services/currenciesAPI';
+// import * as APIModule from '../services/currenciesAPI';
 
-beforeEach(() => {
-  vi.spyOn(APIModule, 'getCurrenciesfromAPI').mockResolvedValue(mockData);
-});
+// beforeEach(() => {
+//   vi.spyOn(APIModule).mockResolvedValue(mockData);
+// });
 
 afterEach(() => {
   vi.restoreAllMocks();

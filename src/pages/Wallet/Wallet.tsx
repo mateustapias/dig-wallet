@@ -6,6 +6,25 @@ import './Wallet.css';
 
 function Wallet() {
   const { wallet: { expenses } } = useSelector((rootState: RootState) => rootState);
+  const tableHeadingValues = [
+    'Descrição',
+    'Tag',
+    'Método de pagamento',
+    'Valor',
+    'Moeda',
+    'Câmbio utilizado',
+    'Valor convertido',
+    'Moeda de conversão',
+    'Editar/Excluir',
+  ];
+
+  function createHeading(values: string[]) {
+    return (
+      values.map((value, index) => (
+        <th key={ index }>{value}</th>
+      ))
+    );
+  }
 
   function createExpenses() {
     return (
@@ -18,11 +37,14 @@ function Wallet() {
         exchangeRates,
       }, index) => (
         <tr className="expense-container" key={ index }>
-          <p>{value}</p>
-          <p>{description}</p>
-          <p>{exchangeRates[currency].ask}</p>
-          <p>{method}</p>
-          <p>{tag}</p>
+          <td>{Number(value).toFixed(2)}</td>
+          <td>{description}</td>
+          <td>{exchangeRates[currency].name}</td>
+          <td>{Number(exchangeRates[currency].ask).toFixed(2)}</td>
+          <td>{method}</td>
+          <td>{tag}</td>
+          <td>{(Number(value) * Number(exchangeRates[currency].ask)).toFixed(2)}</td>
+          <td>Real</td>
         </tr>
       ))
     );
@@ -33,6 +55,11 @@ function Wallet() {
       <Header />
       <WalletForm />
       <table className="wallet-table">
+        <thead>
+          <tr>
+            {createHeading(tableHeadingValues)}
+          </tr>
+        </thead>
         <tbody>
           {createExpenses()}
         </tbody>
