@@ -86,6 +86,7 @@ function WalletForm() {
       <form onSubmit={ handleSubmit }>
         <label>
           Valor:
+          {' '}
           <input
             data-testid="value-input"
             className="value-input"
@@ -96,6 +97,7 @@ function WalletForm() {
         </label>
         <label>
           Descrição:
+          {' '}
           <input
             data-testid="description-input"
             className="description-input"
@@ -106,6 +108,7 @@ function WalletForm() {
         </label>
         <label>
           Moeda:
+          {' '}
           <select
             data-testid="currency-input"
             className="currency-input"
@@ -118,6 +121,7 @@ function WalletForm() {
         </label>
         <label>
           Método de pagamento:
+          {' '}
           <select
             data-testid="method-input"
             className="method-input"
@@ -130,6 +134,7 @@ function WalletForm() {
         </label>
         <label>
           Categoria:
+          {' '}
           <select
             data-testid="tag-input"
             className="tag-input"

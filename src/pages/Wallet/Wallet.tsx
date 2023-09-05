@@ -9,13 +9,13 @@ function Wallet() {
   const { wallet: { expenses } } = useSelector((rootState: RootState) => rootState);
   const dispatch = useDispatch();
   const tableHeadingValues = [
-    'Descrição',
     'Tag',
-    'Método de pagamento',
+    'Descrição',
     'Valor',
     'Moeda',
     'Câmbio utilizado',
     'Valor convertido',
+    'Método de pagamento',
     'Moeda de conversão',
     'Editar/Excluir',
   ];
@@ -45,13 +45,13 @@ function Wallet() {
         exchangeRates,
       }) => (
         <tr className="expense-container" key={ id }>
-          <td>{Number(value).toFixed(2)}</td>
+          <td>{tag}</td>
           <td>{description}</td>
+          <td>{Number(value).toFixed(2)}</td>
           <td>{exchangeRates[currency].name}</td>
           <td>{Number(exchangeRates[currency].ask).toFixed(2)}</td>
-          <td>{method}</td>
-          <td>{tag}</td>
           <td>{(Number(value) * Number(exchangeRates[currency].ask)).toFixed(2)}</td>
+          <td>{method}</td>
           <td>Real</td>
           <td>
             <button

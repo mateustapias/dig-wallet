@@ -35,23 +35,26 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-form-container">
+        <h1>Trybewallet</h1>
         <form onSubmit={ handleSubmit }>
-          <label htmlFor="email-input">
+          <label>
             <input
               data-testid="email-input"
-              id="email-input"
+              className="email-input"
               name="email"
+              autoComplete="off"
               placeholder="Email"
               type="email"
               value={ formData.email }
               onChange={ handleChange }
             />
           </label>
-          <label htmlFor="password-input">
+          <label>
             <input
               data-testid="password-input"
-              id="password-input"
+              className="password-input"
               name="password"
+              autoComplete="off"
               placeholder="Senha"
               type="password"
               value={ formData.password }

@@ -9,7 +9,7 @@ function Header() {
     { expenses } } = useSelector((rootState: RootState) => rootState);
 
   return (
-    <div className="header-container">
+    <header className="header-container">
       <div className="email-container">
         <span data-testid="email-field">
           {email}
@@ -33,7 +33,7 @@ function Header() {
           BRL
         </h3>
       </div>
-    </div>
+    </header>
   );
 }
 

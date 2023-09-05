@@ -1,26 +1,33 @@
 .wallet-form-container form {
   align-items: center;
   display: flex;
+  font-weight: 700;
   justify-content: space-between;
   justify-self: center;
   padding: 10px;
 }
 
 .wallet-form-submit-button {
-  background-color: rgb(14, 14, 141);
+  background-color: rgb(24, 24, 201);
   border: none;
   border-radius: 8px;
   color: white;
+  font-size: 16px;
+  font-weight: 700;
   height: 40px;
   width: 200px;
 }
 
+.wallet-form-submit-button:hover {
+  background-color: rgb(24, 24, 211);
+  cursor: pointer;
+}
 
 .wallet-form-container input {
-  border: 1px solid rgba(0, 0, 0, 0.801);
-  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
   box-sizing: border-box;
-  height: 30px;
+  height: 32px;
 }
 
 .value-input {
@@ -29,9 +36,17 @@
 
 .wallet-form-container select {
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.801);
-  border-radius: 3px;
-  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+  height: 32px;
+}
+
+.wallet-form-container select:hover {
+  cursor: pointer;
+}
+
+.wallet-form-container select:focus {
+  outline: none;
 }
 
 .currency-input {
