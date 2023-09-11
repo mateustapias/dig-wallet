@@ -88,11 +88,13 @@ function WalletForm() {
           Valor:
           {' '}
           <input
+            type="number"
             data-testid="value-input"
             className="value-input"
             name="value"
             value={ value }
             onChange={ handleChange }
+            required
           />
         </label>
         <label>
@@ -104,6 +106,7 @@ function WalletForm() {
             name="description"
             value={ description }
             onChange={ handleChange }
+            required
           />
         </label>
         <label>

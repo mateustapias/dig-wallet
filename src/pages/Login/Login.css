@@ -32,6 +32,7 @@
 }
 
 .login-form-container label {
+  margin: 4px 0;
   width: 100%;
 }
 
@@ -44,8 +45,12 @@
   width: 100%;
 }
 
-.password-input {
-  margin: 4px 0;
+.login-form-container span {
+  align-self: start;
+  color: red;
+  font-size: 14px;
+  padding: 0 10px 0 4px;
+  text-align: justify;
 }
 
 input:focus {

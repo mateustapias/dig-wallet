@@ -19,11 +19,13 @@ function Login() {
     });
   }
 
-  function validateForm() {
-    const { email, password } = formData;
+  function validateEmail() {
     const regex = /^\S+@\S+\.\S+$/;
+    return regex.test(formData.email);
+  }
 
-    return regex.test(email) && password.length >= 6;
+  function validatePassword() {
+    return formData.password.length >= 6;
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -49,6 +51,7 @@ function Login() {
               onChange={ handleChange }
             />
           </label>
+          {!validateEmail() && <span>Digite um email válido</span>}
           <label>
             <input
               data-testid="password-input"
@@ -61,9 +64,10 @@ function Login() {
               onChange={ handleChange }
             />
           </label>
+          {!validatePassword() && <span>Sua senha deve ter mais que 6 caracteres</span>}
           <button
             type="submit"
-            disabled={ !validateForm() }
+            disabled={ !(validateEmail() && validatePassword()) }
           >
             Entrar
           </button>
