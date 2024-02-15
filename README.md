@@ -49,7 +49,7 @@ In the app, you can add your international purchases and their details, includin
 
 When adding a new expense, the application exhibits a card with all the information you provided, in addition to the **Exchange rate used** and **Value converted** to Brazilian Real (BRL), which are auto generated with the exchange rate updated live.
 
-At last, it is also displayed the total value of the expenses and the option to exclude them individually. N SEI SE TA BOM
+At last, it is also displayed the total value of the expenses and the option to exclude them individually.
 <details>
   
 <summary><strong>🛠 Technical details</strong></summary><br />
