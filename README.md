@@ -37,7 +37,7 @@ Por fim, também é exibido o valor total das despesas e a opção de excluí-la
 -->
 # MyWallet: an easy way to keep track of your expenses
 
-**MyWallet** has the purpose of facilitate the control of your spendings, introducing a simple and intuitive interface.
+**MyWallet** has the purpose of facilitating your spending management, introducing a simple and intuitive interface.
 
 In the app, you can add your international purchases and their details, including:
 
