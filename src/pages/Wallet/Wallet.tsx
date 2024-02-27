@@ -17,7 +17,7 @@ function Wallet() {
     'Valor convertido',
     'Método de pagamento',
     'Moeda de conversão',
-    'Editar/Excluir',
+    'Excluir',
   ];
 
   function createHeading(values: string[]) {
